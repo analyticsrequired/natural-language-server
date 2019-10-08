@@ -6,6 +6,7 @@ import wordTokenizer from "./wordTokenizer";
 import transformFilterStopWords from "./transformFilterStopWords";
 import transformLowercase from "./transformLowercase";
 import transformStem from "./transformStem";
+import tfidf from "./tfidf";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -20,5 +21,6 @@ wordTokenizer(app);
 transformFilterStopWords(app);
 transformLowercase(app);
 transformStem(app);
+tfidf(app);
 
 app.listen(port, () => console.log(`Listening on ${port}`));
