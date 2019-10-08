@@ -16,4 +16,18 @@ export default app => {
 
     res.json({ classification });
   });
+
+  app.post("/classify/bayesian/export", (req, res) => {
+    const classifier = new natural.BayesClassifier();
+
+    const { training = [] } = req.body;
+
+    training.forEach(({ text, label }) => {
+      classifier.addDocument(text, label);
+    });
+
+    classifier.train();
+
+    res.json(classifier);
+  });
 };
