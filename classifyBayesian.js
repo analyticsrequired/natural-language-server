@@ -12,8 +12,8 @@ export default app => {
 
     classifier.train();
 
-    const item = classifier.getClassifications(document);
+    const classification = classifier.getClassifications(document);
 
-    res.json({ item });
+    res.json({ classification });
   });
 };
