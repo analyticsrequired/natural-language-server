@@ -7,6 +7,7 @@ import transformFilterStopWords from "./transformFilterStopWords";
 import transformLowercase from "./transformLowercase";
 import transformStem from "./transformStem";
 import tfidf from "./tfidf";
+import classifyBayesian from "./classifyBayesian";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -22,5 +23,6 @@ transformFilterStopWords(app);
 transformLowercase(app);
 transformStem(app);
 tfidf(app);
+classifyBayesian(app);
 
 app.listen(port, () => console.log(`Listening on ${port}`));
