@@ -8,6 +8,7 @@ import transformLowercase from "./transformLowercase";
 import transformStem from "./transformStem";
 
 const app = express();
+const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
@@ -20,4 +21,4 @@ transformFilterStopWords(app);
 transformLowercase(app);
 transformStem(app);
 
-app.listen(3000, () => console.log("Listening"));
+app.listen(port, () => console.log(`Listening on ${port}`));
